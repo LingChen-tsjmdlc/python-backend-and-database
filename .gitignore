@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+
+# PyCharm / IDE
+.idea/
+.vscode/
+*.iml
+
+# 环境变量与密钥
+.env
+*.local
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 数据库本地文件
+*.sqlite3
+*.db
