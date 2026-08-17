@@ -309,7 +309,7 @@ hello
 
 **退出交互模式**：输入 `exit()` 并回车，或按快捷键 `Ctrl + Z` 再回车（Windows）/ `Ctrl + D`（macOS）。
 
-> 配套代码：[04_interactive_demo.py](../../code/part1_python/04_interactive_demo.py)
+> 配套代码：[04_interactive_demo.py](../../code/part1_python/section1/04_interactive_demo.py)
 
 两种运行方式的区别：
 
@@ -436,7 +436,7 @@ Hello, World!
 
 `print()` 是 Python 的输出函数，把括号里的内容显示到屏幕上。这是几乎所有编程语言入门的第一个程序。
 
-> 配套代码：[01_hello_world.py](../../code/part1_python/01_hello_world.py) · [02_print_basics.py](../../code/part1_python/02_print_basics.py)
+> 配套代码：[01_hello_world.py](../../code/part1_python/section1/01_hello_world.py) · [02_print_basics.py](../../code/part1_python/section1/02_print_basics.py)
 
 ### 1.13.2　缩进：Python 的语法核心
 
@@ -496,7 +496,7 @@ print("这行没缩进，不属于 if，总会执行")
 print("Hello")  # 也可以写在代码行末尾
 ```
 
-> 配套代码：[03_comments.py](../../code/part1_python/03_comments.py)
+> 配套代码：[03_comments.py](../../code/part1_python/section1/03_comments.py)
 
 <sub>[返回目录](#top)</sub>
 
@@ -530,13 +530,15 @@ print("Hello")  # 也可以写在代码行末尾
 
 ## 配套示例代码
 
-本节示例代码位于 [`code/part1_python/`](../../code/part1_python/)，只使用本节教过的语法（`print` 与注释）：
+本节示例代码位于 [`code/part1_python/section1/`](../../code/part1_python/section1/)，只使用本节教过的语法（`print` 与注释）：
 
 | 文件                                                                     | 对应内容           |
 | :----------------------------------------------------------------------- | :----------------- |
-| [01_hello_world.py](../../code/part1_python/01_hello_world.py)           | 第一个程序         |
-| [02_print_basics.py](../../code/part1_python/02_print_basics.py)         | print 输出多行文字 |
-| [03_comments.py](../../code/part1_python/03_comments.py)                 | 注释的写法         |
-| [04_interactive_demo.py](../../code/part1_python/04_interactive_demo.py) | 交互模式演示       |
+| [01_hello_world.py](../../code/part1_python/section1/01_hello_world.py)           | 第一个程序         |
+| [02_print_basics.py](../../code/part1_python/section1/02_print_basics.py)         | print 输出多行文字 |
+| [03_comments.py](../../code/part1_python/section1/03_comments.py)                 | 注释的写法         |
+| [04_interactive_demo.py](../../code/part1_python/section1/04_interactive_demo.py) | 交互模式演示       |
+
+也可以打开整节的交互式笔记本 [section1.ipynb](../../code/part1_python/section1/section1.ipynb)，边看讲解边逐格运行。
 
 <sub>[返回目录](#top)</sub>

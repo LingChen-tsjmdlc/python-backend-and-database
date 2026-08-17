@@ -615,14 +615,16 @@ print(f"你的 BMI 是 {bmi}")
 
 用到的知识点回顾：`input()` 接收输入、`float()` 类型转换、`**` 幂运算、`/` 除法、`round()` 取近似、f-string 输出。
 
-> 本节配套代码见 [`code/part2_python/`](../../code/part2_python/)：
-> [01_variables.py](../../code/part2_python/01_variables.py)（变量）·
-> [02_data_types.py](../../code/part2_python/02_data_types.py)（基本类型）·
-> [03_type_convert.py](../../code/part2_python/03_type_convert.py)（类型转换）·
-> [04_operators.py](../../code/part2_python/04_operators.py)（运算符）·
-> [05_strings.py](../../code/part2_python/05_strings.py)（字符串）·
-> [06_bmi_calculator.py](../../code/part2_python/06_bmi_calculator.py)（BMI 实战）·
-> [07_id_address.py](../../code/part2_python/07_id_address.py)（选学：用 id() 看内存地址）
+> 本节配套代码见 [`code/part1_python/section2/`](../../code/part1_python/section2/)：
+> [01_variables.py](../../code/part1_python/section2/01_variables.py)（变量）·
+> [02_data_types.py](../../code/part1_python/section2/02_data_types.py)（基本类型）·
+> [03_type_convert.py](../../code/part1_python/section2/03_type_convert.py)（类型转换）·
+> [04_operators.py](../../code/part1_python/section2/04_operators.py)（运算符）·
+> [05_strings.py](../../code/part1_python/section2/05_strings.py)（字符串）·
+> [06_bmi_calculator.py](../../code/part1_python/section2/06_bmi_calculator.py)（BMI 实战）·
+> [07_id_address.py](../../code/part1_python/section2/07_id_address.py)（选学：用 id() 看内存地址）
+>
+> 也可以打开整节的交互式笔记本 [section2.ipynb](../../code/part1_python/section2/section2.ipynb)，边看讲解边逐格运行。
 
 <sub>[返回目录](#top)</sub>
 
