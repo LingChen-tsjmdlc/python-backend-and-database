@@ -513,7 +513,8 @@ print(f"我叫{name}，今年{age}岁")     # 我叫小明，今年18岁
 ```python
 price = 5
 count = 3
-print(f"总价是 {price * count} 元")   # 总价是 15 元
+t = price * count
+print("总价是"+t+"元")   # 总价是 15 元
 ```
 
 对比一下：f-string 比用 `+` 和 `str()` 拼接清爽得多。

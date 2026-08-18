@@ -1,0 +1,266 @@
+version: 1
+id: part1-section2
+title: 第 1 部分 · 第 2 节 变量与数据类型
+questions:
+  # ---------------------------------------------------------------
+  # 单选 4 分 × 6
+  # ---------------------------------------------------------------
+  - id: sc-01
+    type: single_choice
+    points: 4
+    stem: 下列哪个是合法的 Python 变量名？
+    options:
+      - { key: A, text: 2nd_place }
+      - { key: B, text: player-score }
+      - { key: C, text: player_score }
+      - { key: D, text: class }
+    answer: C
+    explanation: 标识符不能以数字开头（A）、不能含连字符（B）、class 是关键字（D）。
+    tags: [标识符]
+
+  - id: sc-02
+    type: single_choice
+    points: 4
+    stem: '`type(3.0)` 的结果是？'
+    options:
+      - { key: A, text: int }
+      - { key: B, text: float }
+      - { key: C, text: str }
+      - { key: D, text: bool }
+    answer: B
+    explanation: 3.0 是浮点数字面量，type(3.0) 返回 float。
+    tags: [数据类型]
+
+  - id: sc-03
+    type: single_choice
+    points: 4
+    stem: '表达式 `7 / 2` 的值是？'
+    options:
+      - { key: A, text: "3" }
+      - { key: B, text: "3.5" }
+      - { key: C, text: "'3'" }
+      - { key: D, text: "'4'" }
+    answer: B
+    explanation: Python 3 的 / 是真除法，int 除 int 结果也是 float。
+    tags: [运算符]
+
+  - id: sc-04
+    type: single_choice
+    points: 4
+    stem: '`int("3.14")` 会发生什么？'
+    options:
+      - { key: A, text: 返回 3 }
+      - { key: B, text: 返回 3.14 }
+      - { key: C, text: 抛出 ValueError }
+      - { key: D, text: 返回 "3.14" }
+    answer: C
+    explanation: 带小数点的字符串不能直接转 int，要先 float("3.14") 再 int。
+    tags: [类型转换]
+
+  - id: sc-05
+    type: single_choice
+    points: 4
+    stem: '`"a" + "b"` 的结果是？'
+    options:
+      - { key: A, text: ab }
+      - { key: B, text: '"ab"' }
+      - { key: C, text: a b }
+      - { key: D, text: 报错 }
+    answer: A
+    explanation: + 对两个字符串做拼接，结果还是字符串 "ab"（引号只是表示法）。
+    tags: [字符串]
+
+  - id: sc-06
+    type: single_choice
+    points: 4
+    stem: '下列哪个表达式的结果是布尔值？'
+    options:
+      - { key: A, text: 1 + 1 }
+      - { key: B, text: 3 > 2 }
+      - { key: C, text: '"Python"' }
+      - { key: D, text: int("18") }
+    answer: B
+    explanation: 比较运算符的结果是 bool；A 是 int，C 是 str，D 是 int。
+    tags: [运算符]
+
+  # ---------------------------------------------------------------
+  # 填空 4 分 × 4（多空均分）
+  # ---------------------------------------------------------------
+  - id: fb-01
+    type: fill_blank
+    points: 4
+    stem: 'len("Python") 的值是 ____，"Python"[0] 的值是 ____。'
+    blanks:
+      - { answer: "6" }
+      - { answer: P, accept: ["\"P\"", "'P'"] }
+    explanation: len 返回字符数；索引从 0 开始，s[0] 是 P。
+    tags: [字符串]
+
+  - id: fb-02
+    type: fill_blank
+    points: 4
+    stem: 'int("18") + 1 的值是 ____；str(18) + "岁" 的值是 ____。'
+    blanks:
+      - { answer: "19" }
+      - { answer: 18岁 }
+    explanation: int("18") 转成整数 18 再加 1；str(18) 转成 "18" 后拼接。
+    tags: [类型转换]
+
+  - id: fb-03
+    type: fill_blank
+    points: 4
+    stem: '"Python"[-1] 的值是 ____；"Python"[1:4] 的值是 ____。'
+    blanks:
+      - { answer: n }
+      - { answer: yth }
+    explanation: -1 是最后一个字符；切片含头不含尾，取索引 1、2、3。
+    tags: [字符串]
+
+  - id: fb-04
+    type: fill_blank
+    points: 4
+    stem: '表达式 not True 的值是 ____；10 // 3 的值是 ____。'
+    blanks:
+      - { answer: "False", accept: ["false"] }
+      - { answer: "3" }
+    explanation: not 取反；// 是整除（向下取整）。
+    tags: [运算符]
+
+  # ---------------------------------------------------------------
+  # 代码分析（single_choice + code）5 分 × 3
+  # ---------------------------------------------------------------
+  - id: ca-01
+    type: single_choice
+    points: 6
+    code: |
+      a = [1, 2, 3]
+      b = a
+      b.append(4)
+      print(a)
+    stem: 上述代码的输出是？
+    options:
+      - { key: A, text: '[1, 2, 3]' }
+      - { key: B, text: '[1, 2, 3, 4]' }
+      - { key: C, text: 抛出异常 }
+    answer: B
+    explanation: b = a 是引用赋值，两个名字指向同一个列表，b 添加元素 a 也看得到。
+    tags: [引用]
+
+  - id: ca-02
+    type: single_choice
+    points: 6
+    code: |
+      x = 10
+      x = x + 5
+      print(x)
+    stem: 上述代码的输出是？
+    options:
+      - { key: A, text: "10" }
+      - { key: B, text: "5" }
+      - { key: C, text: "15" }
+      - { key: D, text: 报错 }
+    answer: C
+    explanation: 赋值是"覆盖"，x 先存 10，再加 5 变成 15。
+    tags: [变量]
+
+  - id: ca-03
+    type: single_choice
+    points: 6
+    code: |
+      s = "hello"
+      t = s.upper()
+      print(t, s)
+    stem: 上述代码的输出是？
+    options:
+      - { key: A, text: HELLO hello }
+      - { key: B, text: HELLO HELLO }
+      - { key: C, text: hello hello }
+      - { key: D, text: 报错 }
+    answer: A
+    explanation: 字符串不可变，upper() 返回新字符串，原 s 不变。
+    tags: [字符串]
+
+  # ---------------------------------------------------------------
+  # 代码解析（code_explain，手动批改）7.5 分 × 2
+  # ---------------------------------------------------------------
+  - id: ce-01
+    type: code_explain
+    points: 6
+    code: |
+      age_text = input("请输入年龄：")
+      age = int(age_text)
+      print(f"明年你 {age + 1} 岁")
+    stem: 逐行解释这段代码做了什么，并指出：如果用户输入 "abc"，会发生什么？为什么？
+    rubric:
+      - input() 接收用户输入，返回字符串
+      - int() 把字符串转成整数才能做加法
+      - f-string 把结果嵌入字符串输出
+      - 输入 "abc" 时 int("abc") 抛 ValueError（内容不是合法数字，转不过去）
+    reference: |
+      这段代码接收用户输入的年龄（字符串），用 int() 转成整数，
+      再用 f-string 输出"明年你 N+1 岁"。
+      若输入 "abc"，int("abc") 会抛出 ValueError，
+      因为 abc 不是合法数字，字符串转整数只在内容合法时成功。
+    explanation: input 永远返回字符串；转换失败是运行时错误。
+    tags: [类型转换, 输入输出]
+
+  - id: ce-02
+    type: code_explain
+    points: 6
+    code: |
+      price = 9.9
+      count = 3
+      total = price * count
+      print(f"总价：{total:.2f}")
+    stem: 解释这段代码的功能，并说明 "{total:.2f}" 中 .2f 起什么作用。如果去掉 .2f 输出会有什么不同？
+    rubric:
+      - 说出"计算单价 × 数量的总价"
+      - .2f 表示保留两位小数输出
+      - 去掉 .2f 时输出 29.7（默认表示），不再是 29.70
+    reference: |
+      代码计算 9.9 × 3 的总价并用 f-string 格式化输出。
+      .2f 把浮点数格式化为两位小数，输出"总价：29.70"；
+      去掉后 print(f"总价：{total}") 输出 29.7（浮点数的默认表示）。
+    explanation: 格式化只改变显示，不改变 total 的值。
+    tags: [f-string, 输入输出]
+
+  # ---------------------------------------------------------------
+  # 编程（programming，传入 py 文件手动批改）15 分 × 2
+  # ---------------------------------------------------------------
+  - id: pg-01
+    type: programming
+    points: 15
+    stem: 编写函数 `bmi(weight_kg, height_m)`，返回 BMI 值（体重 ÷ 身高²），结果保留一位小数。本节 2.8 的 BMI 计算器就是它。
+    starter: |
+      def bmi(weight_kg, height_m):
+          ...
+    reference: |
+      def bmi(weight_kg, height_m):
+          return round(weight_kg / height_m ** 2, 1)
+    expect_defs: [bmi]
+    checklist:
+      - 函数名是 bmi，参数是 weight_kg 和 height_m
+      - 用 ** 2 计算身高平方（或等价写法）
+      - 用 round(..., 1) 保留一位小数
+      - return 返回结果（不是 print）
+    grading: manual
+    tags: [实战]
+
+  - id: pg-02
+    type: programming
+    points: 15
+    stem: 编写函数 `celsius_to_fahrenheit(celsius)`，把摄氏温度转成华氏温度（公式 F = C × 9 / 5 + 32），结果保留一位小数。
+    starter: |
+      def celsius_to_fahrenheit(celsius):
+          ...
+    reference: |
+      def celsius_to_fahrenheit(celsius):
+          return round(celsius * 9 / 5 + 32, 1)
+    expect_defs: [celsius_to_fahrenheit]
+    checklist:
+      - 函数名是 celsius_to_fahrenheit，参数是 celsius
+      - 公式顺序正确（先乘除后加）
+      - 用 round(..., 1) 保留一位小数
+      - return 返回结果（不是 print）
+    grading: manual
+    tags: [实战]
