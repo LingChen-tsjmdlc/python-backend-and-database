@@ -194,7 +194,7 @@ print(id(name))     # 例如 2103948571632（每次运行可能不同）
 ```python
 user_name = "ok"     # 正确
 age2 = 18            # 正确（数字不在开头）
-2age = 18            # 错误：不能以数字开头
+# 2age = 18            # 错误：不能以数字开头
 ```
 
 ### 2.2.2　命名惯例（建议遵守，让代码更易读）
@@ -427,10 +427,10 @@ print("x" in "abc")      # False
 
 - **身份运算符 `is`**：判断两个变量是不是「同一个对象」。入门阶段最常见的用法是判断变量是否为 `None`（`None` 是表示「空」的特殊值，见 2.3.1）：
 
-  ```python
-  answer = None
-  print(answer is None)    # True
-  ```
+```python
+answer = None
+print(answer is None)    # True
+```
 
   判断一个变量是不是 `None`，惯例上用 `is None`（而不是 `== None`）。
 

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="680" height="300" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+<rect width="680" height="300" fill="#FFFFFF"/>
+<text x="340" y="40" text-anchor="middle" font-size="22" fill="#2C2C2A">四种容器一览</text>
+
+<rect x="40" y="64" width="145" height="216" rx="10" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="112" y="92" text-anchor="middle" font-size="15" font-weight="500" fill="#185FA5">列表 list</text>
+<rect x="51" y="118" width="38" height="36" rx="4" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
+<text x="70" y="142" text-anchor="middle" font-size="14" fill="#2C2C2A">85</text>
+<rect x="93" y="118" width="38" height="36" rx="4" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
+<text x="112" y="142" text-anchor="middle" font-size="14" fill="#2C2C2A">92</text>
+<rect x="135" y="118" width="38" height="36" rx="4" fill="#E6F1FB" stroke="#378ADD" stroke-width="0.5"/>
+<text x="154" y="142" text-anchor="middle" font-size="14" fill="#2C2C2A">78</text>
+<text x="70" y="178" text-anchor="middle" font-size="12" fill="#1D9E75">0</text>
+<text x="112" y="178" text-anchor="middle" font-size="12" fill="#1D9E75">1</text>
+<text x="154" y="178" text-anchor="middle" font-size="12" fill="#1D9E75">2</text>
+<text x="112" y="198" text-anchor="middle" font-size="11" fill="#5F5E5A">有顺序，用索引取</text>
+<text x="112" y="256" text-anchor="middle" font-size="13" fill="#2C2C2A">有序、可以改</text>
+
+<rect x="197" y="64" width="145" height="216" rx="10" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="269" y="92" text-anchor="middle" font-size="15" font-weight="500" fill="#0F6E56">字典 dict</text>
+<rect x="210" y="118" width="46" height="26" rx="4" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text x="233" y="135" text-anchor="middle" font-size="11" fill="#854F0B">name</text>
+<path d="M 258 131 L 280 131" fill="none" stroke="#888780" stroke-width="1.2"/>
+<rect x="282" y="118" width="48" height="26" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="306" y="135" text-anchor="middle" font-size="12" fill="#2C2C2A">小明</text>
+<rect x="210" y="154" width="46" height="26" rx="4" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text x="233" y="171" text-anchor="middle" font-size="11" fill="#854F0B">age</text>
+<path d="M 258 167 L 280 167" fill="none" stroke="#888780" stroke-width="1.2"/>
+<rect x="282" y="154" width="48" height="26" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="306" y="171" text-anchor="middle" font-size="12" fill="#2C2C2A">18</text>
+<text x="269" y="212" text-anchor="middle" font-size="11" fill="#5F5E5A">键 → 值，一对一对存</text>
+<text x="269" y="256" text-anchor="middle" font-size="13" fill="#2C2C2A">按键（名字）查找</text>
+
+<rect x="354" y="64" width="145" height="216" rx="10" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="426" y="92" text-anchor="middle" font-size="15" font-weight="500" fill="#854F0B">元组 tuple</text>
+<path d="M 419 116 v-5 a7 7 0 0 1 14 0 v5" fill="none" stroke="#BA7517" stroke-width="2"/>
+<rect x="416" y="116" width="20" height="16" rx="3" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text x="370" y="172" text-anchor="middle" font-size="16" fill="#5F5E5A">(</text>
+<rect x="381" y="150" width="38" height="36" rx="4" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text x="400" y="174" text-anchor="middle" font-size="14" fill="#2C2C2A">3</text>
+<rect x="423" y="150" width="38" height="36" rx="4" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text x="442" y="174" text-anchor="middle" font-size="14" fill="#2C2C2A">5</text>
+<text x="478" y="172" text-anchor="middle" font-size="16" fill="#5F5E5A">)</text>
+<text x="426" y="212" text-anchor="middle" font-size="11" fill="#5F5E5A">上锁：防止误改</text>
+<text x="426" y="256" text-anchor="middle" font-size="13" fill="#2C2C2A">创建后不能改</text>
+
+<rect x="511" y="64" width="145" height="216" rx="10" fill="#FFFFFF" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="583" y="92" text-anchor="middle" font-size="15" font-weight="500" fill="#1D9E75">集合 set</text>
+<ellipse cx="583" cy="152" rx="54" ry="42" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="583" y="146" text-anchor="middle" font-size="12" fill="#2C2C2A">python</text>
+<text x="583" y="166" text-anchor="middle" font-size="12" fill="#2C2C2A">sql</text>
+<text x="583" y="218" text-anchor="middle" font-size="11" fill="#5F5E5A">重复元素自动丢弃</text>
+<text x="583" y="256" text-anchor="middle" font-size="13" fill="#2C2C2A">去重、无序</text>
+</svg>

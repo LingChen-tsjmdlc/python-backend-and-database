@@ -139,8 +139,8 @@ Python 有两大版本，语法有差异、不完全兼容：
 一个快速识别老代码的方法——`print` 的写法：
 
 ```python
-# Python 2 的写法（已过时）
-print "hello"
+# Python 2 的写法（已过时）,现在写会报错
+# print "hello"
 
 # Python 3 的写法
 print("hello")
@@ -301,8 +301,8 @@ Python 3.13.x ...
 出现 `>>>` 提示符，表示进入了交互模式。此时可以逐行输入代码，回车后**立即执行并显示结果**：
 
 ```python
->>> print("hello")
-hello
+# >>> print("hello")
+# hello
 ```
 
 交互模式适合快速试验一小段代码、验证某个语法。

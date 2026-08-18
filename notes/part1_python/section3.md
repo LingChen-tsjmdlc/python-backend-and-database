@@ -246,9 +246,9 @@ for i in range(1, 10):
 **一个常见误区：`break` / `continue` 是循环专用的，不能单独用在 `if` 里。** 注意上面示例的写法是"**循环里套 `if`**"——`if` 只负责判断"什么时候中断"，真正干活的中断动作只对循环有效。如果离开循环直接用，会直接报错：
 
 ```python
-x = 5
-if x == 5:
-    break        # 报错：SyntaxError: 'break' outside loop
+# x = 5
+# if x == 5:
+#     break        # 报错：SyntaxError: 'break' outside loop
 ```
 
 换句话说：`if` 没有"中断"这回事，`break`/`continue` 离开 `for`/`while` 就没有意义。
