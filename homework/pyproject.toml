@@ -1,0 +1,34 @@
+[project]
+name = "homework-studio"
+version = "0.1.0"
+description = "课程作业工具：YAML 题库 + PySide 界面"
+requires-python = ">=3.12"
+dependencies = [
+    "herosideui==0.8.0",
+    "pyyaml",
+    "pydantic",
+]
+
+[project.scripts]
+homework = "app.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app", "core"]
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+explicit = true
+
+[tool.uv.sources]
+herosideui = { index = "testpypi" }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-qt>=4.5.0",
+]
