@@ -15,7 +15,6 @@ ASSIGNMENT_DICT: dict = {
         {
             "id": "sc-01",
             "type": "single_choice",
-            "points": 4,
             "stem": "下列哪个是合法的变量名？",
             "options": [
                 {"key": "A", "text": "2nd_place"},
@@ -29,7 +28,6 @@ ASSIGNMENT_DICT: dict = {
         {
             "id": "ca-01",          # 代码分析题 = single_choice + code
             "type": "single_choice",
-            "points": 4,
             "code": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)",
             "stem": "上述代码的输出是？",
             "options": [
@@ -43,7 +41,6 @@ ASSIGNMENT_DICT: dict = {
         {
             "id": "fb-01",
             "type": "fill_blank",
-            "points": 3,
             "stem": 'len("hello") 是 ____，type(1 + 1.0) 是 ____。',
             "blanks": [
                 {"answer": "5"},
@@ -54,7 +51,6 @@ ASSIGNMENT_DICT: dict = {
         {
             "id": "ce-01",
             "type": "code_explain",
-            "points": 8,
             "code": "total = 0\nfor i in range(10):\n    total = total + i\nprint(total / 10)",
             "stem": "解释这段代码的作用，并指出可能的问题。",
             "rubric": ["说出计算平均值", "指出命名不清晰"],
@@ -63,7 +59,6 @@ ASSIGNMENT_DICT: dict = {
         {
             "id": "pg-01",
             "type": "programming",
-            "points": 7,
             "stem": "编写函数 add(a, b) 返回两数之和。",
             "starter": "def add(a: int, b: int) -> int:\n    ...",
             "reference": "def add(a: int, b: int) -> int:\n    return a + b",
@@ -74,9 +69,8 @@ ASSIGNMENT_DICT: dict = {
     ],
 }
 
-TOTAL_POINTS = 26   # 4 + 4 + 3 + 8 + 7
-AUTO_TOTAL = 11     # 4 + 4 + 3
-MANUAL_TOTAL = 15   # 8 + 7
+AUTO_TOTAL = 3      # sc-01 + ca-01 + fb-01
+MANUAL_TOTAL = 2    # ce-01 + pg-01
 
 
 @pytest.fixture

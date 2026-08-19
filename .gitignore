@@ -27,3 +27,6 @@ Thumbs.db
 # 数据库本地文件
 *.sqlite3
 *.db
+
+# uv
+homework/.python-version

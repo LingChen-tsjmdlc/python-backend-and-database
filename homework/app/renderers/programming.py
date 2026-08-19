@@ -1,15 +1,14 @@
-"""programming 渲染器：starter CodeBlock + 选 .py 文件（Button + QFileDialog + 文件名 Chip）。
+"""programming 渲染器：CodeEditor 直写代码作答。
 
-提交时机由主窗口控制：渲染器只负责选择与展示，文件复制归档在提交时统一做。
+- starter 作为编辑器预填内容（学员可直接在其上写）。
+- 提交时把编辑器全文落盘到 submissions/<卷>/<题>/answer.py 再判分。
 """
 
 from __future__ import annotations
 
-from pathlib import Path
+from PySide6.QtWidgets import QVBoxLayout, QWidget
 
-from PySide6.QtWidgets import QFileDialog, QHBoxLayout, QVBoxLayout, QWidget
-
-from hero_side_ui import Button, Chip, CodeBlock
+from hero_side_ui import CodeEditor
 
 from core.schema import Answer, Programming, ProgrammingAnswer
 
@@ -20,55 +19,39 @@ class ProgrammingRenderer(QWidget):
     def __init__(self, question: Programming, theme: str = "auto", parent: QWidget | None = None):
         super().__init__(parent)
         self._q = question
-        self._file: Path | None = None
+        self._starter = (question.starter or "").strip()
 
         lay = QVBoxLayout(self)
         lay.setContentsMargins(0, 0, 0, 0)
         lay.setSpacing(10)
 
-        if question.starter:
-            lay.addWidget(CodeBlock(question.starter, language="python"))
-
-        row = QHBoxLayout()
-        row.setSpacing(8)
-        self._pick_btn = Button("选择 .py 文件", color="primary", variant="flat", theme=theme)
-        self._pick_btn.clicked.connect(self._on_pick)
-        row.addWidget(self._pick_btn)
-
-        self._chip = Chip("", color="success", variant="flat")
-        self._chip.hide()
-        row.addWidget(self._chip)
-        row.addStretch(1)
-        lay.addLayout(row)
-
-    def _on_pick(self) -> None:
-        path, _ = QFileDialog.getOpenFileName(
-            self, "选择答案文件", "", "Python 文件 (*.py)"
+        self._editor = CodeEditor(
+            value=question.starter or "",
+            language="python",
+            min_lines=12,
+            theme=theme,
         )
-        if not path:
-            return
-        p = Path(path)
-        if p.suffix.lower() != ".py":
-            self._chip.set_text("只接受 .py 文件")
-            self._chip.setStyleSheet("color: #f31260;")
-            self._chip.show()
-            return
-        self._file = p
-        self._chip.set_text(p.name)
-        self._chip.setStyleSheet("")
-        self._chip.show()
+        lay.addWidget(self._editor)
 
     def widget(self) -> QWidget:
         return self
 
+    def set_disabled(self, disabled: bool = True) -> None:
+        """批改模式：编辑器只读（仍可选中复制）。"""
+        self._editor.set_read_only(disabled)
+
     def collect(self) -> Answer:
-        return ProgrammingAnswer(file=str(self._file) if self._file else None)
+        current = self._editor.value()
+        # starter 原样未动 → 视为未作答（不落盘、判 unanswered）
+        if current.strip() == self._starter:
+            return ProgrammingAnswer(file=None, source=None)
+        return ProgrammingAnswer(file=None, source=current)
 
     def is_answered(self) -> bool:
-        return self._file is not None
+        current = self._editor.value().strip()
+        return bool(current) and current != self._starter
 
     def restore(self, answer: ProgrammingAnswer) -> None:
-        if answer.file and Path(answer.file).suffix.lower() == ".py":
-            self._file = Path(answer.file)
-            self._chip.set_text(self._file.name)
-            self._chip.show()
+        text = answer.source if answer.source is not None else ""
+        self._editor.set_value(text or (self._q.starter or ""))
+

@@ -61,3 +61,26 @@ def parse_py_file(path: Path, expect_defs: tuple[str, ...] | list[str] = ()) -> 
     missing = tuple(d for d in expect if d not in defs)
 
     return ParseResult(ok=True, syntax_error=None, defs=defs, missing_defs=missing)
+
+
+def parse_py_source(source: str, expect_defs: tuple[str, ...] | list[str] = ()) -> ParseResult:
+    """解析编辑器直写的代码字符串（同样只解析、不执行）。"""
+    expect = tuple(expect_defs)
+    try:
+        tree = ast.parse(source)
+    except SyntaxError as e:
+        return ParseResult(
+            ok=False,
+            syntax_error=f"第 {e.lineno} 行: {e.msg}",
+            defs=(),
+            missing_defs=expect,
+        )
+
+    defs = tuple(
+        node.name
+        for node in tree.body
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))
+    )
+    missing = tuple(d for d in expect if d not in defs)
+
+    return ParseResult(ok=True, syntax_error=None, defs=defs, missing_defs=missing)

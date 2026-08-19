@@ -1,4 +1,4 @@
-"""code_explain 渲染器：CodeBlock 代码 + Textarea 自由作答。"""
+"""code_explain 代码解释提渲染器：CodeBlock 代码 + Textarea 自由作答。"""
 
 from __future__ import annotations
 
@@ -31,6 +31,10 @@ class CodeExplainRenderer(QWidget):
 
     def widget(self) -> QWidget:
         return self
+
+    def set_disabled(self, disabled: bool = True) -> None:
+        """批改模式：禁用文本区。"""
+        self._area.set_is_disabled(disabled)
 
     def collect(self) -> Answer:
         t = self._area.text()

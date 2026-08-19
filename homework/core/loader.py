@@ -16,7 +16,6 @@ from .schema import Assignment
 
 logger = logging.getLogger(__name__)
 
-EXPECTED_TOTAL = 100
 
 
 class SchemaError(Exception):
@@ -64,14 +63,7 @@ def load_assignment(path: Path) -> LoadResult:
     except ValidationError as e:
         raise SchemaError(path, f"校验失败:\n{e}") from e
 
-    warnings: list[str] = []
-    total = assignment.total_points
-    if total != EXPECTED_TOTAL:
-        msg = f"分值总和 {total} != {EXPECTED_TOTAL}（不阻断，仅提示）"
-        warnings.append(msg)
-        logger.warning("[%s] %s", path, msg)
-
-    return LoadResult(assignment, warnings)
+    return LoadResult(assignment, [])
 
 
 def discover_assignments(directory: Path) -> list[LoadResult]:

@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "课程作业工具：YAML 题库 + PySide 界面"
 requires-python = ">=3.12"
 dependencies = [
-    "herosideui==0.8.0",
+    "herosideui==0.8.1",
     "pyyaml",
     "pydantic",
 ]

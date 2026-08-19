@@ -1,4 +1,4 @@
-"""fill_blank 渲染器：每个空一个 Input；多空用两列网格排布。"""
+"""fill_blank 填空题渲染器：每个空一个 Input；多空用两列网格排布。"""
 
 from __future__ import annotations
 
@@ -47,6 +47,11 @@ class FillBlankRenderer(QWidget):
     def is_answered(self) -> bool:
         return any(inp.text().strip() for inp in self._inputs)
 
+    def set_disabled(self, disabled: bool = True) -> None:
+        """批改模式：禁用所有输入框。"""
+        for inp in self._inputs:
+            inp.set_is_disabled(disabled)
+
     def restore(self, answer: FillBlankAnswer) -> None:
         for inp, v in zip(self._inputs, answer.values):
-            inp.setText(v or "")
+            inp.set_text(v or "")

@@ -1,13 +1,12 @@
 version: 1
 id: part1-section2
-title: 第 1 部分 · 第 2 节 变量与数据类型
+title: 第 2 节 变量与数据类型
 questions:
   # ---------------------------------------------------------------
   # 单选 4 分 × 6
   # ---------------------------------------------------------------
   - id: sc-01
     type: single_choice
-    points: 4
     stem: 下列哪个是合法的 Python 变量名？
     options:
       - { key: A, text: 2nd_place }
@@ -20,7 +19,6 @@ questions:
 
   - id: sc-02
     type: single_choice
-    points: 4
     stem: '`type(3.0)` 的结果是？'
     options:
       - { key: A, text: int }
@@ -33,7 +31,6 @@ questions:
 
   - id: sc-03
     type: single_choice
-    points: 4
     stem: '表达式 `7 / 2` 的值是？'
     options:
       - { key: A, text: "3" }
@@ -46,7 +43,6 @@ questions:
 
   - id: sc-04
     type: single_choice
-    points: 4
     stem: '`int("3.14")` 会发生什么？'
     options:
       - { key: A, text: 返回 3 }
@@ -59,7 +55,6 @@ questions:
 
   - id: sc-05
     type: single_choice
-    points: 4
     stem: '`"a" + "b"` 的结果是？'
     options:
       - { key: A, text: ab }
@@ -72,7 +67,6 @@ questions:
 
   - id: sc-06
     type: single_choice
-    points: 4
     stem: '下列哪个表达式的结果是布尔值？'
     options:
       - { key: A, text: 1 + 1 }
@@ -88,7 +82,6 @@ questions:
   # ---------------------------------------------------------------
   - id: fb-01
     type: fill_blank
-    points: 4
     stem: 'len("Python") 的值是 ____，"Python"[0] 的值是 ____。'
     blanks:
       - { answer: "6" }
@@ -98,7 +91,6 @@ questions:
 
   - id: fb-02
     type: fill_blank
-    points: 4
     stem: 'int("18") + 1 的值是 ____；str(18) + "岁" 的值是 ____。'
     blanks:
       - { answer: "19" }
@@ -108,7 +100,6 @@ questions:
 
   - id: fb-03
     type: fill_blank
-    points: 4
     stem: '"Python"[-1] 的值是 ____；"Python"[1:4] 的值是 ____。'
     blanks:
       - { answer: n }
@@ -118,7 +109,6 @@ questions:
 
   - id: fb-04
     type: fill_blank
-    points: 4
     stem: '表达式 not True 的值是 ____；10 // 3 的值是 ____。'
     blanks:
       - { answer: "False", accept: ["false"] }
@@ -131,7 +121,6 @@ questions:
   # ---------------------------------------------------------------
   - id: ca-01
     type: single_choice
-    points: 6
     code: |
       a = [1, 2, 3]
       b = a
@@ -148,7 +137,6 @@ questions:
 
   - id: ca-02
     type: single_choice
-    points: 6
     code: |
       x = 10
       x = x + 5
@@ -165,7 +153,6 @@ questions:
 
   - id: ca-03
     type: single_choice
-    points: 6
     code: |
       s = "hello"
       t = s.upper()
@@ -185,7 +172,6 @@ questions:
   # ---------------------------------------------------------------
   - id: ce-01
     type: code_explain
-    points: 6
     code: |
       age_text = input("请输入年龄：")
       age = int(age_text)
@@ -206,7 +192,6 @@ questions:
 
   - id: ce-02
     type: code_explain
-    points: 6
     code: |
       price = 9.9
       count = 3
@@ -229,7 +214,6 @@ questions:
   # ---------------------------------------------------------------
   - id: pg-01
     type: programming
-    points: 15
     stem: 编写函数 `bmi(weight_kg, height_m)`，返回 BMI 值（体重 ÷ 身高²），结果保留一位小数。本节 2.8 的 BMI 计算器就是它。
     starter: |
       def bmi(weight_kg, height_m):
@@ -248,7 +232,6 @@ questions:
 
   - id: pg-02
     type: programming
-    points: 15
     stem: 编写函数 `celsius_to_fahrenheit(celsius)`，把摄氏温度转成华氏温度（公式 F = C × 9 / 5 + 32），结果保留一位小数。
     starter: |
       def celsius_to_fahrenheit(celsius):

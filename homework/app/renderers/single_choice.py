@@ -1,4 +1,4 @@
-"""single_choice 渲染器：选项 RadioGroup；代码分析题带 CodeBlock 代码上下文。"""
+"""single_choice 单选渲染器：选项 RadioGroup；代码分析题带 CodeBlock 代码上下文。"""
 
 from __future__ import annotations
 
@@ -41,6 +41,10 @@ class SingleChoiceRenderer(QWidget):
 
     def is_answered(self) -> bool:
         return bool(self._group.value())
+
+    def set_disabled(self, disabled: bool = True) -> None:
+        """批改模式：禁用整个选项组（学生不能再改）。"""
+        self._group.set_is_disabled(disabled)
 
     def set_theme(self, theme: str) -> None:
         """切主题时重建（状态由 collect/restore 承接）。"""

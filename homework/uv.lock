@@ -22,7 +22,7 @@ wheels = [
 
 [[package]]
 name = "herosideui"
-version = "0.8.0"
+version = "0.8.1"
 source = { registry = "https://test.pypi.org/simple/" }
 dependencies = [
     { name = "markdown-it-py" },
@@ -31,9 +31,9 @@ dependencies = [
     { name = "pyicu-wheels" },
     { name = "pyside6" },
 ]
-sdist = { url = "https://test-files.pythonhosted.org/packages/e8/53/5a45546da11edf30f44ff1a247fdc71c189b30e334c1c462ed0a7cffcccc/herosideui-0.8.0.tar.gz", hash = "sha256:9ae534a99033992703c93062939b1fe0e95132878f78c22df01541879722bc1a", size = 21327968, upload-time = "2026-08-18T13:51:18.24Z" }
+sdist = { url = "https://test-files.pythonhosted.org/packages/90/23/cb396a720ff2842e20785bf59b6e74794aba1966d4a898591072184bbe24/herosideui-0.8.1.tar.gz", hash = "sha256:6b1b5b87a847dd0ea269f5de0a2ed6c1da9957e949406f02e31b293439576f16", size = 21338712, upload-time = "2026-08-19T11:20:57.519Z" }
 wheels = [
-    { url = "https://test-files.pythonhosted.org/packages/66/c8/7e836112acefe75abbd16037a9493e2468d49eb26bf116d0cfb38a77905a/herosideui-0.8.0-py3-none-any.whl", hash = "sha256:481c2c6f52a1b43bd55bd4b931599634e76e390947ee65925288aac41e86f3e3", size = 21553621, upload-time = "2026-08-18T13:51:14.949Z" },
+    { url = "https://test-files.pythonhosted.org/packages/a4/70/646af24c663140d203c9b969ec3b4e9cb94f753b5411dec8e898259cfe99/herosideui-0.8.1-py3-none-any.whl", hash = "sha256:5ed26c794124e669774659ad81a41cab28ee91a34f55813f5b706c533f082cbe", size = 21565491, upload-time = "2026-08-19T11:20:54.726Z" },
 ]
 
 [[package]]
@@ -54,7 +54,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "herosideui", specifier = "==0.8.0", index = "https://test.pypi.org/simple/" },
+    { name = "herosideui", specifier = "==0.8.1", index = "https://test.pypi.org/simple/" },
     { name = "pydantic" },
     { name = "pyyaml" },
 ]
